@@ -8,6 +8,9 @@ import Collapse from '@mui/material/Collapse';
 
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
@@ -48,6 +51,39 @@ export default function Menu() {
         </ListSubheader>
       }
     >
+      {/* GENERAL PAGES */}
+      <ListItemButton
+        component={Link}
+        to="/"
+        selected={location.pathname === "/"}
+      >
+        <ListItemIcon>
+          <HomeIcon />
+        </ListItemIcon>
+        <ListItemText primary="Home" />
+      </ListItemButton>
+
+      <ListItemButton
+        component={Link}
+        to="/about"
+        selected={location.pathname === "/about"}
+      >
+        <ListItemIcon>
+          <InfoIcon />
+        </ListItemIcon>
+        <ListItemText primary="About" />
+      </ListItemButton>
+
+      <ListItemButton
+        component={Link}
+        to="/create"
+        selected={location.pathname === "/create"}
+      >
+        <ListItemIcon>
+          <AddCircleIcon />
+        </ListItemIcon>
+        <ListItemText primary="Create" />
+      </ListItemButton>
       {/* STUDENTS */}
       <ListItemButton onClick={() => handleToggle("students")}>
         <ListItemIcon>
